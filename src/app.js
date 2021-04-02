@@ -50,9 +50,7 @@ class App extends React.Component {
         <h1>Our Items</h1>
         <Form handleAddItem={this.addItem} />
         <hr />
-        <Items handleDelete={this.deleteItem} itemsList={this.state.items} />
-        <hr />
-        <UpdateItemForm handleUpdate={this.updateItem} itemsList={this.state.items} />
+        <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />
         <hr />
         <AddNewItem handleGet={this.addItem}itemsList={this.state.items} />
       </div>
