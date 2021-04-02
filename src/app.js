@@ -41,10 +41,12 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
+    console.log('state: ', this.state)
     await this.getItems();
   }
 
   render() {
+    
     return (
       <div>
         <h1>Our Items</h1>

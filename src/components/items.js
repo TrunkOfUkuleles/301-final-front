@@ -5,7 +5,7 @@ import UpdateItemForm from './update-item';
 class Items extends React.Component {
 
   render() {
-
+console.log('items itemList: ', this.props.itemsList)
     return (
       <section>
         <h2>Items...</h2>
@@ -18,7 +18,7 @@ class Items extends React.Component {
               <UpdateItemForm item={this.item} handleUpdate={this.props.handleUpdate} />
               <button
                 data-testid={`delete-button-${item.name}`}
-                onClick={ () => this.props.handleDelete(pasreInt(item._id)) }
+                onClick={ () => this.props.handleDelete(item._id) }
               >Delete Item</button>
             </div>
           )
