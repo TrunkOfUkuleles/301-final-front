@@ -15,10 +15,10 @@ class Items extends React.Component {
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <blockquote>{item.notes}</blockquote>
-              <UpdateItemForm item={item} handleUpdate={this.props.handleUpdate} />
+              <UpdateItemForm item={this.item} handleUpdate={this.props.handleUpdate} />
               <button
                 data-testid={`delete-button-${item.name}`}
-                onClick={ () => this.props.handleDelete(item._id) }
+                onClick={ () => this.props.handleDelete(pasreInt(item._id)) }
               >Delete Item</button>
             </div>
           )

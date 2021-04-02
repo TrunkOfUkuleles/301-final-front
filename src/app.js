@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
 import Items from './components/items.js';
 import AddNewItem from './components/add-item';
-import UpdateItemForm from './components/update-item'
+
 
 require('dotenv').config();
 const API_SERVER = process.env.REACT_APP_API;
@@ -30,7 +30,7 @@ class App extends React.Component {
   }
 
   updateItem = async (item) => {
-    await axios.put(`${API_SERVER}/items/${item._id}`, {params: {item}});
+    await axios.put(`${API_SERVER}/items/${item.id}`, {params: {item}});
     this.getItems();
   }
 
@@ -52,7 +52,7 @@ class App extends React.Component {
         <hr />
         <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />
         <hr />
-        <AddNewItem handleGet={this.addItem}itemsList={this.state.items} />
+        <AddNewItem handleAddItem={this.addItem}itemsList={this.state.items} />
       </div>
 
     );
