@@ -5,7 +5,7 @@ import axios from 'axios';
 import Form from './components/add-item.js';
 import Items from './components/items.js';
 
-const API_SERVER = process.env.REACT_APP_API;
+const API_SERVER = REACT_APP_API;
 
 class App extends React.Component {
 
@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   addItem = async (item) => {
-    await axios.post(`${API_SERVER}/items`, item);
+    await axios.post(`${API_SERVER}/items`, {params: {item}});
     this.getItems();
   }
 
@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   updateItem = async (item) => {
-    await axios.put(`${API_SERVER}/items/${item._id}`, item);
+    await axios.put(`${API_SERVER}/items/${item._id}`, {params: {item}});
     this.getItems();
   }
 
