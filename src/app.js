@@ -1,11 +1,14 @@
 import React from 'react';
 
 import axios from 'axios';
-
-import Form from './components/add-item.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form'
 import Items from './components/items.js';
+import AddNewItem from './components/add-item';
+import UpdateItemForm from './components/update-item'
 
-const API_SERVER = REACT_APP_API;
+require('dotenv').config();
+const API_SERVER = process.env.REACT_APP_API;
 
 class App extends React.Component {
 

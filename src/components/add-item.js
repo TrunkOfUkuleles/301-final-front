@@ -43,3 +43,5 @@ export class AddNewItem extends React.Component {
     );
   }
 }
+
+export default AddNewItem;
