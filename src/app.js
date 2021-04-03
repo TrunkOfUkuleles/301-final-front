@@ -7,8 +7,8 @@ import Items from './components/items.js';
 import AddNewItem from './components/add-item';
 
 
-require('dotenv').config();
-const API_SERVER = process.env.REACT_APP_API;
+// require('dotenv').config();
+// const API_SERVER = process.env.REACT_APP_API;
 
 class App extends React.Component {
 
@@ -20,22 +20,25 @@ class App extends React.Component {
   }
 
   addItem = async (item) => {
-    await axios.post(`${API_SERVER}/items`, {params: {item}});
-    this.getItems();
+    await axios.post(`http://localhost:3001/items`, {params: {item}});
+    this.getItems.then(rez => this.setState({rez}));
+    
   }
 
   deleteItem = async (id) => {
-    await axios.delete(`${API_SERVER}/items/${id}`);
-    this.getItems();
+    await axios.delete(`http://localhost:3001/items/${id}`);
+    this.getItems().then(rez => this.setState({rez}));
+    
   }
-
+ 
   updateItem = async (item) => {
-    await axios.put(`${API_SERVER}/items/${item.id}`, {params: {item}});
-    this.getItems();
+    await axios.put(`http://localhost:3001/items/${item.id}`, {params: {item}});
+    this.getItems().then(rez => this.setState({rez}));
+    
   }
 
   getItems = async () => {
-    const response = await axios.get(`${API_SERVER}/items`);
+    const response = await axios.get(`http://localhost:3001/items`);
     const items = response.data;
     this.setState({items});
   }

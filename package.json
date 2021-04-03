@@ -16,6 +16,7 @@
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "supergoose": "^0.2.6",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
@@ -44,7 +45,6 @@
   },
   "description": "## Available Scripts",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TrunkOfUkuleles/301-final-front.git"
@@ -54,5 +54,8 @@
   "bugs": {
     "url": "https://github.com/TrunkOfUkuleles/301-final-front/issues"
   },
-  "homepage": "https://github.com/TrunkOfUkuleles/301-final-front#readme"
+  "homepage": "https://github.com/TrunkOfUkuleles/301-final-front",
+  "devDependencies": {
+    "mongodb-memory-server-global": "^6.9.6"
+  }
 }

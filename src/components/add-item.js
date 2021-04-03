@@ -30,7 +30,7 @@ export class AddNewItem extends React.Component {
       <Form data-testid="add-form" onSubmit={this.handleSubmit}>
         <Form.Group>
           <Form.Label>Item</Form.Label>
-          <Form.Control type="text" placeholder="Enter email" data-testid="add-form-name" name="name" onChange={this.handleChange} />
+          <Form.Control type="text" placeholder="Item Name" data-testid="add-form-name" name="name" onChange={this.handleChange} />
         </Form.Group>
         <Form.Group>
           <Form.Label>Description</Form.Label>
