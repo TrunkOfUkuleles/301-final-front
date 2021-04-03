@@ -5,7 +5,7 @@ class UpdateItemForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: this.props.item
+      item: {}
     };
   }
 
@@ -14,8 +14,10 @@ class UpdateItemForm extends React.Component {
     const value = e.target.value;
     const item = this.state.item;
     item[field] = value;
-    this.setState(item);
+    console.log(this.state)
+    this.setState({item: item});
   }
+    
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -23,11 +25,12 @@ class UpdateItemForm extends React.Component {
   }
 
   render() {
-
+      console.log(this.props.items)
     return (
-      <form data-testid={`update-form-${this.props.item.name}`} onSubmit={this.handleSubmit}>
+
+      <form data-testid={`update-form-${this.props.item.name}`} onSubmit={(e) => this.handleSubmit(e)}>
         <input data-testid={`update-field-${this.props.item._id}`} name="notes" placeholder="Add Notes" onChange={this.handleChange} />
-        <button type="submit">Update Item</button>
+        <button type="submit" onClick={this.handleSubmit}>Update Item</button>
       </form>
     );
   }

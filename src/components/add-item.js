@@ -17,6 +17,7 @@ export class AddNewItem extends React.Component {
     const formData = this.state.formData;
     formData[field] = value;
     this.setState({formData});
+    console.log('changing: ', this.state)
   }
 
   handleSubmit = (e) => {

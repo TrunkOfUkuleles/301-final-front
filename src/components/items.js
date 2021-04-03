@@ -10,17 +10,17 @@ console.log('items itemList: ', this.props.itemsList)
       <section>
         <h2>Items...</h2>
         {
-          this.props.itemsList.forEach( (item,idx) =>
-            <div key={idx}>
+          this.props.itemsList.map( (item) =>(
+            <div key={item._id}>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <blockquote>{item.notes}</blockquote>
-              <UpdateItemForm item={this.item} handleUpdate={this.props.handleUpdate} />
+              <UpdateItemForm item={item} handleUpdate={this.props.handleUpdate} />
               <button
                 data-testid={`delete-button-${item.name}`}
                 onClick={ () => this.props.handleDelete(item._id) }
               >Delete Item</button>
-            </div>
+            </div>)
           )
         }
       </section>

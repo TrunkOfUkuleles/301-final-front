@@ -54,7 +54,7 @@
   "bugs": {
     "url": "https://github.com/TrunkOfUkuleles/301-final-front/issues"
   },
-  "homepage": "https://github.com/TrunkOfUkuleles/301-final-front",
+   "homepage": "https://localhost:3000",
   "devDependencies": {
     "mongodb-memory-server-global": "^6.9.6"
   }

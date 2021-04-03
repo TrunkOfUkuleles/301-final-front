@@ -8,7 +8,7 @@ import AddNewItem from './components/add-item';
 
 
 // require('dotenv').config();
-// const API_SERVER = process.env.REACT_APP_API;
+const API_SERVER = process.env.REACT_APP_API;
 
 class App extends React.Component {
 
@@ -20,44 +20,48 @@ class App extends React.Component {
   }
 
   addItem = async (item) => {
-    await axios.post(`http://localhost:3001/items`, {params: {item}});
-    this.getItems.then(rez => this.setState({rez}));
+    console.log('add item: ' , item)
+    await axios.post(`${API_SERVER}/items`, item);
+    this.getItems()
     
   }
 
   deleteItem = async (id) => {
-    await axios.delete(`http://localhost:3001/items/${id}`);
-    this.getItems().then(rez => this.setState({rez}));
+    await axios.delete(`${API_SERVER}/items/${id}`);
+    this.getItems()
     
   }
  
   updateItem = async (item) => {
-    await axios.put(`http://localhost:3001/items/${item.id}`, {params: {item}});
-    this.getItems().then(rez => this.setState({rez}));
+    await axios.put(`${API_SERVER}/items/${item._id}`, item);
+    this.getItems()
     
   }
 
   getItems = async () => {
-    const response = await axios.get(`http://localhost:3001/items`);
+    const response = await axios.get(`${API_SERVER}/items`);
     const items = response.data;
+    console.log("get item log: ", items)
     this.setState({items});
   }
 
   async componentDidMount() {
-    console.log('state: ', this.state)
-    await this.getItems();
+    await this.getItems()
   }
 
   render() {
     
     return (
-      <div className='bounding-box' display="grid" justify-self="center">
+      <div className='bounding-box' display="grid" justify-content="center">
+        <div className="adding-box" width="50ch" display="grid" justify-content="center">
+        <AddNewItem handleAddItem={this.addItem} />
+      </div>
         <h1>Our Items</h1>
-        <Form handleAddItem={this.addItem} />
+        <Form/>
         <hr />
         <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />
         <hr />
-        <AddNewItem handleAddItem={this.addItem}itemsList={this.state.items} />
+        
       </div>
 
     );
