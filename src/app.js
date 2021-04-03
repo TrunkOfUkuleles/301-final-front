@@ -57,7 +57,7 @@ class App extends React.Component {
         <div className="center-me"  >
         <AddNewItem handleAddItem={this.addItem} />
       </div>
-        <h1>Our Items</h1>
+        <h1 color="white">Our Items</h1>
         <Form/>
         <hr />
         <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} className="center-me"/>

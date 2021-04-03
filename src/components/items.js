@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Card from 'react-bootstrap/Card'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import UpdateItemForm from './update-item';
 
 class Items extends React.Component {
@@ -11,16 +12,16 @@ console.log('items itemList: ', this.props.itemsList)
         <h2>Items...</h2>
         {
           this.props.itemsList.map( (item) =>(
-            <div key={item._id}>
+            <Card key={item._id} className="center-me">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <blockquote>{item.notes}</blockquote>
-              <UpdateItemForm item={item} handleUpdate={this.props.handleUpdate} />
+              <UpdateItemForm item={item} handleUpdate={this.props.handleUpdate} className="center-me" />
               <button
                 data-testid={`delete-button-${item.name}`}
                 onClick={ () => this.props.handleDelete(item._id) }
               >Delete Item</button>
-            </div>)
+            </Card>)
           )
         }
       </section>
