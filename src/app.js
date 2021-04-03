@@ -48,7 +48,7 @@ class App extends React.Component {
   render() {
     
     return (
-      <div>
+      <div className='bounding-box' display="grid" justify-self="center">
         <h1>Our Items</h1>
         <Form handleAddItem={this.addItem} />
         <hr />
