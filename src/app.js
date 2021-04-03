@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './app.css'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
@@ -53,14 +53,14 @@ class App extends React.Component {
   render() {
     
     return (
-      <div className='bounding-box' display="grid" justify-content="center">
-        <div className="adding-box" width="50ch" display="grid" justify-content="center">
+      <div className="bounding-box" >
+        <div className="center-me"  >
         <AddNewItem handleAddItem={this.addItem} />
       </div>
         <h1>Our Items</h1>
         <Form/>
         <hr />
-        <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />
+        <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} className="center-me"/>
         <hr />
         
       </div>

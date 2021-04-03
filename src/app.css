@@ -1,0 +1,17 @@
+#root{
+    display: grid;
+    justify-content: center;
+}
+
+.bounding-box{
+    display: grid;
+    width: 500px;
+    background-color: deepskyblue;
+    justify-self: center;
+
+}
+
+.center-me{
+    display: grid;
+    justify-self: center;
+}
