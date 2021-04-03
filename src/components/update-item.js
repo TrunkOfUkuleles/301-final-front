@@ -5,7 +5,10 @@ class UpdateItemForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: {}
+      item: {_id: this.props.item._id,
+            name: this.props.item.name,
+            description: this.props.item.description,
+          }
     };
   }
 

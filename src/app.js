@@ -33,6 +33,7 @@ class App extends React.Component {
   }
  
   updateItem = async (item) => {
+    console.log(item)
     await axios.put(`${API_SERVER}/items/${item._id}`, item);
     this.getItems()
     
