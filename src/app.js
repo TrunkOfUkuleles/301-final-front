@@ -8,8 +8,8 @@ import AddNewItem from './components/add-item';
 
 
 // require('dotenv').config();
-const API_SERVER = process.env.REACT_APP_API;
-
+const API_SERVER = process.env.REACT_APP_HEROKU;
+// const API_SERVER = process.env.REACT_APP_API;
 class App extends React.Component {
 
   constructor(props) {
