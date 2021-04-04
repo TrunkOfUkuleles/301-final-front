@@ -9,7 +9,7 @@ class Items extends React.Component {
 console.log('items itemList: ', this.props.itemsList)
     return (
       <section>
-        <h2 style={{justifySelf: center}}>Some Things in stock</h2>
+        <h2>Some Things in stock</h2>
         {
           this.props.itemsList.map( (item) =>(
             <Card key={item._id} className="center-me">
