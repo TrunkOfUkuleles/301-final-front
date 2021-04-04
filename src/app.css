@@ -1,12 +1,17 @@
 #root{
     display: grid;
     justify-content: center;
+    background-color:forestgreen
 }
 
+
+h2{
+    justify-self: center;
+}
 .bounding-box{
     display: grid;
     width: 500px;
-    background-color: deepskyblue;
+    background-color: rgb(200, 176, 255);
     justify-self: center;
 
 }
